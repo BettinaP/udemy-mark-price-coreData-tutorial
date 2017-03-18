@@ -28,7 +28,7 @@ class ItemDetailsVCViewController: UIViewController, UIPickerViewDelegate, UIPic
         storePicker.delegate = self
         storePicker.dataSource = self
         
-        generateTestData()
+        //generateTestData()
         getStores()
         
     }
@@ -83,4 +83,29 @@ class ItemDetailsVCViewController: UIViewController, UIPickerViewDelegate, UIPic
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //update when selected
     }
+    
+    @IBAction func saveItemPressed(_ sender: Any) {
+        
+        let item = Item(context: context)
+        
+        if let title = titleField.text {
+            item.title = title
+        }
+        
+        if let price = priceField.text {
+            item.price = (price as NSString).doubleValue
+        }
+        
+        if let details = detailsField.text {
+            item.details = details
+        }
+        
+        // toStore is relationship between Item & Store entities. Assigning a store via relationship via this particular item. store is being selected via storePicker.
+        item.toStore = stores[storePicker.selectedRow(inComponent: 0)]
+        
+        ad.saveContext()
+        
+       _ = navigationController?.popViewController(animated: true)
+    }
+    
 }

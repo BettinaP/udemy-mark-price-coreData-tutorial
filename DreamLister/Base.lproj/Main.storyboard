@@ -177,7 +177,7 @@
                                     <constraint firstAttribute="width" constant="100" id="TO3-Zk-Xn8"/>
                                 </constraints>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bF0-yj-77H">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bF0-yj-77H">
                                 <rect key="frame" x="124" y="82" width="235" height="40"/>
                                 <color key="backgroundColor" red="0.66901041666666661" green="0.66901041666666661" blue="0.66901041666666661" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -187,7 +187,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k2L-Dh-Vpx">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k2L-Dh-Vpx">
                                 <rect key="frame" x="124" y="138" width="235" height="40"/>
                                 <color key="backgroundColor" red="0.66901041670000005" green="0.66901041670000005" blue="0.66901041670000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -197,7 +197,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Details" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vSd-qY-95c">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Details" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vSd-qY-95c">
                                 <rect key="frame" x="16" y="194" width="343" height="60"/>
                                 <color key="backgroundColor" red="0.66901041670000005" green="0.66901041670000005" blue="0.66901041670000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -224,6 +224,9 @@
                                 <state key="normal" title="Save Item">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveItemPressed:" destination="5Ds-Ta-gJE" eventType="touchUpInside" id="Mz6-5T-n3e"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1am-Bd-KNc">
                                 <rect key="frame" x="123" y="364" width="129" height="21"/>

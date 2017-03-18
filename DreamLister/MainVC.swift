@@ -73,7 +73,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         fetchRequest.sortDescriptors = [dateSort]
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
         controller = fetchedResultsController
+        
+        controller.delegate = self //must set controller as its delegate so it can listen for changes to update tableview as per willChange/didChangeContent functions far below
         
         do {
             try controller.performFetch()
