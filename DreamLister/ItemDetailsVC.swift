@@ -181,3 +181,5 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         imagePicker.dismiss(animated: true, completion: nil) //to dismiss camera roll
     }
 }
+
+//modify to include itemType. add/editVC  type textfiel, modify load & save item details in itemCell and vc and add typeSort and segment control
