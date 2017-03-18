@@ -89,6 +89,17 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         //update when selected
     }
     
+    @IBAction func deletePressed(_ sender: Any) {
+    //only want to delete if item passed is one that already exists so create a check
+        
+        if itemToEdit != nil {
+            context.delete(itemToEdit!)
+            ad.saveContext()
+        }
+        //pop back to main view once done deleting
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func saveItemPressed(_ sender: UIButton) {
         var item : Item!
         
