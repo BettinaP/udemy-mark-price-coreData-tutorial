@@ -98,9 +98,6 @@
                                                         <constraint firstAttribute="trailing" secondItem="GT4-L1-iS2" secondAttribute="trailing" constant="8" id="jTB-1G-3vI"/>
                                                         <constraint firstItem="Zcq-pd-p2Z" firstAttribute="leading" secondItem="dQ4-7s-17F" secondAttribute="trailing" constant="8" id="u5Q-4L-3TR"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
