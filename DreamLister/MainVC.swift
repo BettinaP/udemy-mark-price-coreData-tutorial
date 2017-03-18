@@ -72,7 +72,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         // anytime someon clicks on an item it tableview, this function is called. Checking to see if objects exist in our fetchedResults controller and there's at least one of them. Setting item to specific item selected from list/array
         if let objects = controller.fetchedObjects, objects.count > 0{
             let item = objects[indexPath.row]
-        //sending selected item's details to be shown in itemDetailsVC via segue for editing
+            //sending selected item's details to be shown in itemDetailsVC via segue for editing
             performSegue(withIdentifier: "toShowItemDetails", sender: item)
         }
     }
@@ -91,7 +91,16 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     func attemptFetch() {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor(key: "createdAt", ascending: false)
-        fetchRequest.sortDescriptors = [dateSort]
+        let priceSort = NSSortDescriptor(key: "price", ascending: true)
+        let titleSort = NSSortDescriptor(key: "title", ascending: true)
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            fetchRequest.sortDescriptors = [dateSort]
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            fetchRequest.sortDescriptors = [priceSort]
+        } else if segmentedControl.selectedSegmentIndex == 2 {
+            fetchRequest.sortDescriptors = [titleSort]
+        }
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
@@ -106,6 +115,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             print("\(error)")
         }
     }
+    
+    @IBAction func segmentChange(_ sender: Any) {
+        attemptFetch()
+        tableView.reloadData()
+    }
+    
     
     //NFRcontroller will listen for you whenever tableView is about to update with some changes and will handle it for you
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -144,6 +159,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             break
         }
     }
+    
+    
+   
     
     func generateTestData() {
         
