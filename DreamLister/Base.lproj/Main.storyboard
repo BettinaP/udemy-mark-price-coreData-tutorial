@@ -38,7 +38,7 @@
                                 <rect key="frame" x="16" y="120" width="343" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="jjh-vA-LuF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="jjh-vA-LuF" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jjh-vA-LuF" id="tbO-0d-6UE">
@@ -112,6 +112,12 @@
                                                 <constraint firstItem="RUT-Du-FWZ" firstAttribute="leading" secondItem="tbO-0d-6UE" secondAttribute="leadingMargin" id="peM-G1-HLD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="details" destination="eIM-wH-geh" id="YDn-T4-keA"/>
+                                            <outlet property="price" destination="Zcq-pd-p2Z" id="cVz-eA-k3q"/>
+                                            <outlet property="thumbnail" destination="dQ4-7s-17F" id="0C2-2t-8YG"/>
+                                            <outlet property="title" destination="GT4-L1-iS2" id="zQv-9C-S4y"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -134,6 +140,10 @@
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Dx3-42-X3s" id="m0K-wY-jio"/>
+                        <outlet property="tableView" destination="SQG-FE-oZZ" id="2h1-ue-Cc3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,33 +170,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTe-DA-hbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="176.80000000000001" y="691.304347826087"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="PRp-CG-u5X">
-            <objects>
-                <tableViewController id="1p3-YL-fY4" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="toe-KS-m8z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sES-xB-4YS">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sES-xB-4YS" id="PI8-So-rRS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="1p3-YL-fY4" id="hsl-xa-GpM"/>
-                            <outlet property="delegate" destination="1p3-YL-fY4" id="8or-Lq-vbq"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hp2-EM-DsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

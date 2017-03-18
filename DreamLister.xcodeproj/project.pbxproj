@@ -22,6 +22,7 @@
 		DE5C28731E7CCC630086577A /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C286B1E7CCC630086577A /* Item+CoreDataClass.swift */; };
 		DE5C28741E7CCC630086577A /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C286C1E7CCC630086577A /* Item+CoreDataProperties.swift */; };
 		DE5C28791E7CD7330086577A /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C28781E7CD7330086577A /* MaterialView.swift */; };
+		DE5C287B1E7CDBBA0086577A /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C287A1E7CDBBA0086577A /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		DE5C286B1E7CCC630086577A /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DE5C286C1E7CCC630086577A /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DE5C28781E7CD7330086577A /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		DE5C287A1E7CDBBA0086577A /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,6 @@
 				DE5C28621E7CC5210086577A /* View */,
 				DE5C28601E7CC4CF0086577A /* Model */,
 				DE5C283B1E7CC0300086577A /* AppDelegate.swift */,
-				DE5C283D1E7CC0300086577A /* MainVC.swift */,
 				DE5C283F1E7CC0300086577A /* Main.storyboard */,
 				DE5C28451E7CC0300086577A /* Assets.xcassets */,
 				DE5C28471E7CC0300086577A /* LaunchScreen.storyboard */,
@@ -115,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5C28781E7CD7330086577A /* MaterialView.swift */,
+				DE5C287A1E7CDBBA0086577A /* ItemCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -122,6 +124,7 @@
 		DE5C28641E7CC5360086577A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DE5C283D1E7CC0300086577A /* MainVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5C287B1E7CDBBA0086577A /* ItemCell.swift in Sources */,
 				DE5C28731E7CCC630086577A /* Item+CoreDataClass.swift in Sources */,
 				DE5C28721E7CCC630086577A /* Image+CoreDataProperties.swift in Sources */,
 				DE5C286F1E7CCC630086577A /* ItemType+CoreDataClass.swift in Sources */,
