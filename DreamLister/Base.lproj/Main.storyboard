@@ -218,7 +218,6 @@
                                 <rect key="frame" x="16" y="617" width="343" height="30"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="JX8-l7-f5S"/>
                                     <constraint firstAttribute="height" constant="30" id="uVq-qx-iVK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -270,6 +269,12 @@
                             <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailsField" destination="vSd-qY-95c" id="mXo-LQ-bnx"/>
+                        <outlet property="priceField" destination="k2L-Dh-Vpx" id="aI9-5D-iVZ"/>
+                        <outlet property="storePicker" destination="T4V-hs-E2G" id="yQ3-NG-3u8"/>
+                        <outlet property="titleField" destination="bF0-yj-77H" id="Ext-59-olX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGK-nO-uB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
