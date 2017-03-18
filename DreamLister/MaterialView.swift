@@ -19,7 +19,9 @@ extension UIView { //anything that inherits from UIView will have ability to hav
     
         get {
             return materialKey
-        } set {
+        }
+        
+        set {
             //when somone goes in and adds a new view, can select if they want materialDesign added to view and if it's selected, the below stylings added.
             materialKey = newValue
             
@@ -38,7 +40,6 @@ extension UIView { //anything that inherits from UIView will have ability to hav
             }
         }
     }
-    
-    
+
 
 }

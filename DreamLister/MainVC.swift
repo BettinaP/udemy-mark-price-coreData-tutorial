@@ -24,7 +24,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.dataSource = self
         
         attemptFetch()
-        generateTestData()
+        //generateTestData()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -50,16 +50,16 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         return 0
     }
     
-    func configureCell(cell : ItemCell, indexPath: NSIndexPath){
+    func configureCell(cell: ItemCell, indexPath: IndexPath) {
         
         let item = controller.object(at: indexPath as IndexPath)
-        cell.configureCell(item: item)
+        cell.primaryConfigureCell(item: item)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemCell
-        configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+        configureCell(cell: cell, indexPath: indexPath as IndexPath)
         return cell
     }
     
@@ -107,7 +107,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         case .update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! ItemCell
-                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+                configureCell(cell: cell, indexPath: indexPath as IndexPath)
             }
             break
         case .move:
