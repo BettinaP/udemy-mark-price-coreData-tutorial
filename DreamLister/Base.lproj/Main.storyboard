@@ -163,19 +163,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LvP-SW-L7k">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgres" translatesAutoresizingMaskIntoConstraints="NO" id="LvP-SW-L7k" userLabel="ThumbnailImage Pick">
                                 <rect key="frame" x="16" y="82" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="NUB-Bt-gpL"/>
                                     <constraint firstAttribute="width" constant="100" id="kQX-or-ZhI"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRz-PF-Ktd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRz-PF-Ktd" userLabel="addImage Button">
                                 <rect key="frame" x="16" y="82" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1vC-LF-Zpo"/>
                                     <constraint firstAttribute="width" constant="100" id="TO3-Zk-Xn8"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImagePressed:" destination="5Ds-Ta-gJE" eventType="touchUpInside" id="tRB-TQ-0K0"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bF0-yj-77H">
                                 <rect key="frame" x="124" y="82" width="235" height="40"/>
@@ -277,6 +280,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailsField" destination="vSd-qY-95c" id="63J-IW-RMW"/>
+                        <outlet property="imagePick" destination="LvP-SW-L7k" id="0yo-NR-VDh"/>
                         <outlet property="priceField" destination="k2L-Dh-Vpx" id="tAi-Gc-G2m"/>
                         <outlet property="storePicker" destination="T4V-hs-E2G" id="AKb-qd-aaJ"/>
                         <outlet property="titleField" destination="bF0-yj-77H" id="M0z-uT-WeN"/>
@@ -312,6 +316,7 @@
     </scenes>
     <resources>
         <image name="7651" width="800" height="489"/>
+        <image name="imgres" width="116" height="112"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kbP-hf-wI7"/>

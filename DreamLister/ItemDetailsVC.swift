@@ -9,15 +9,19 @@
 import UIKit
 import CoreData
 
-class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var storePicker: UIPickerView!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var detailsField: UITextField!
     
+    @IBOutlet weak var imagePick: UIImageView!
+    
+    
     var stores = [Store]()
     var itemToEdit: Item?
+    var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,9 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
         storePicker.delegate = self
         storePicker.dataSource = self
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         
        // generateTestData()
         getStores()
@@ -103,11 +110,17 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBAction func saveItemPressed(_ sender: UIButton) {
         var item : Item!
         
+        let picture = Image(context: context)
+        picture.picture = imagePick.image
+        
+        
         if itemToEdit == nil {
             item = Item(context: context)
         } else {
             item = itemToEdit
         }
+        
+        item.toImage = picture
         
         if let title = titleField.text {
             item.title = title
@@ -136,6 +149,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 titleField.text = item.title
                 priceField.text = "\(item.price)"
                 detailsField.text = item.details
+                imagePick.image = item.toImage?.picture as? UIImage //image/picture attribute under our Image entity was set as a type of transformable because we wanted to directly save images to the attribute/property which is of type NSObject so no need to convert to data
                 
                 // itemToEdit's saved store is a string. Must loop to check and compare name one by one to store options in storePicker view and assign that value to pickerView to then save in edit
                 if let store = item.toStore {
@@ -152,4 +166,18 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             }
     }
     
+    
+    @IBAction func addImagePressed(_ sender: UIButton) {
+        present(imagePicker, animated: true, completion: nil)
+    
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        //instead of returning just an image, returns dictionary of any object, so actual image must be extracted by going into info dictionary Apple provides and cast it
+       
+        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagePick.image = img
+        }
+        imagePicker.dismiss(animated: true, completion: nil) //to dismiss camera roll
+    }
 }
