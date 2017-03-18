@@ -22,7 +22,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         tableView.delegate = self
         tableView.dataSource = self
+        
         attemptFetch()
+        generateTestData()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -116,6 +119,26 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             }
             break
         }
+    }
+    
+    func generateTestData() {
+        
+        let item = Item(context: context)
+        item.title = "MacBook Pro"
+        item.price = 1800
+        item.details = "I can't wait until the septmeber event, i hope they release new MBPs"
+        
+        let item2 = Item(context: context)
+        item2.title = "Bose Headphones"
+        item2.price = 350
+        item2.details = "Silence, finally! It's so nice to be able to block out everyone with noise cancelling tech"
+        
+        let item3 = Item(context: context)
+        item3.title = "Tesla Model S"
+        item3.price = 110000
+        item3.details = "Beautiful car, hope to own it one day."
+        
+        ad.saveContext()
     }
     
 }
