@@ -1,5 +1,5 @@
 //
-//  ItemDetailsVCViewController.swift
+//  ItemDetailsVC.swift
 //  DreamLister
 //
 //  Created by Bettina on 3/18/17.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ItemDetailsVCViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var storePicker: UIPickerView!
     @IBOutlet weak var titleField: UITextField!
@@ -17,6 +17,7 @@ class ItemDetailsVCViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var detailsField: UITextField!
     
     var stores = [Store]()
+    var itemToEdit: Item?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,12 @@ class ItemDetailsVCViewController: UIViewController, UIPickerViewDelegate, UIPic
         storePicker.delegate = self
         storePicker.dataSource = self
         
-        //generateTestData()
+       // generateTestData()
         getStores()
+        
+        if itemToEdit != nil { // if we've passed an already existing item for editing into this view then load that item's data
+            loadItemData()
+        }
         
     }
     
@@ -84,9 +89,14 @@ class ItemDetailsVCViewController: UIViewController, UIPickerViewDelegate, UIPic
         //update when selected
     }
     
-    @IBAction func saveItemPressed(_ sender: Any) {
+    @IBAction func saveItemPressed(_ sender: UIButton) {
+        var item : Item!
         
-        let item = Item(context: context)
+        if itemToEdit == nil {
+            item = Item(context: context)
+        } else {
+            item = itemToEdit
+        }
         
         if let title = titleField.text {
             item.title = title
@@ -105,7 +115,30 @@ class ItemDetailsVCViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         ad.saveContext()
         
-       _ = navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    
+    func loadItemData() {
+        
+            if let item = itemToEdit {
+                titleField.text = item.title
+                priceField.text = "\(item.price)"
+                detailsField.text = item.details
+                
+                // itemToEdit's saved store is a string. Must loop to check and compare name one by one to store options in storePicker view and assign that value to pickerView to then save in edit
+                if let store = item.toStore {
+                    var index = 0
+                    repeat {
+                        let s = stores[index]
+                        if s.name == store.name {
+                            storePicker.selectRow(index, inComponent: 0, animated: false)
+                            break
+                        }
+                        index += 1
+                    } while (index < stores.count)
+                }
+            }
     }
     
 }

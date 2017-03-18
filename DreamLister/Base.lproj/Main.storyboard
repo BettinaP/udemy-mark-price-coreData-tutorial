@@ -154,7 +154,7 @@
         <!--Add/Edit-->
         <scene sceneID="2sy-I0-y2L">
             <objects>
-                <viewController id="5Ds-Ta-gJE" customClass="ItemDetailsVCViewController" customModule="DreamLister" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5Ds-Ta-gJE" customClass="ItemDetailsVC" customModule="DreamLister" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HyB-oQ-gVu"/>
                         <viewControllerLayoutGuide type="bottom" id="aPS-mv-dEp"/>
@@ -225,7 +225,7 @@
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveItemPressed:" destination="5Ds-Ta-gJE" eventType="touchUpInside" id="Mz6-5T-n3e"/>
+                                    <action selector="saveItemPressed:" destination="5Ds-Ta-gJE" eventType="touchUpInside" id="ozV-ot-sRW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1am-Bd-KNc">
@@ -273,10 +273,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="detailsField" destination="vSd-qY-95c" id="mXo-LQ-bnx"/>
-                        <outlet property="priceField" destination="k2L-Dh-Vpx" id="aI9-5D-iVZ"/>
-                        <outlet property="storePicker" destination="T4V-hs-E2G" id="yQ3-NG-3u8"/>
-                        <outlet property="titleField" destination="bF0-yj-77H" id="Ext-59-olX"/>
+                        <outlet property="detailsField" destination="vSd-qY-95c" id="63J-IW-RMW"/>
+                        <outlet property="priceField" destination="k2L-Dh-Vpx" id="tAi-Gc-G2m"/>
+                        <outlet property="storePicker" destination="T4V-hs-E2G" id="AKb-qd-aaJ"/>
+                        <outlet property="titleField" destination="bF0-yj-77H" id="M0z-uT-WeN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGK-nO-uB9" userLabel="First Responder" sceneMemberID="firstResponder"/>

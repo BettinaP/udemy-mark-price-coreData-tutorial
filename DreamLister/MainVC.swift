@@ -67,6 +67,27 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         return 150
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // anytime someon clicks on an item it tableview, this function is called. Checking to see if objects exist in our fetchedResults controller and there's at least one of them. Setting item to specific item selected from list/array
+        if let objects = controller.fetchedObjects, objects.count > 0{
+            let item = objects[indexPath.row]
+        //sending selected item's details to be shown in itemDetailsVC via segue for editing
+            performSegue(withIdentifier: "toShowItemDetails", sender: item)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toShowItemDetails" {
+            //passing selected item to be edited in ItemDetailsVC (sending info from original view to new view)
+            if let destination = segue.destination as? ItemDetailsVC {
+                if let item = sender as? Item {
+                    destination.itemToEdit = item
+                }
+            }
+        }
+    }
+    
     func attemptFetch() {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor(key: "createdAt", ascending: false)

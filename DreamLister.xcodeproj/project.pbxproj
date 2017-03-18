@@ -23,7 +23,7 @@
 		DE5C28741E7CCC630086577A /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C286C1E7CCC630086577A /* Item+CoreDataProperties.swift */; };
 		DE5C28791E7CD7330086577A /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C28781E7CD7330086577A /* MaterialView.swift */; };
 		DE5C287B1E7CDBBA0086577A /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C287A1E7CDBBA0086577A /* ItemCell.swift */; };
-		DEE7A32F1E7D86C300C2CEDC /* ItemDetailsVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE7A32E1E7D86C300C2CEDC /* ItemDetailsVCViewController.swift */; };
+		DEE7A32F1E7D86C300C2CEDC /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE7A32E1E7D86C300C2CEDC /* ItemDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		DE5C286C1E7CCC630086577A /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DE5C28781E7CD7330086577A /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		DE5C287A1E7CDBBA0086577A /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		DEE7A32E1E7D86C300C2CEDC /* ItemDetailsVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsVCViewController.swift; sourceTree = "<group>"; };
+		DEE7A32E1E7D86C300C2CEDC /* ItemDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5C283D1E7CC0300086577A /* MainVC.swift */,
-				DEE7A32E1E7D86C300C2CEDC /* ItemDetailsVCViewController.swift */,
+				DEE7A32E1E7D86C300C2CEDC /* ItemDetailsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -214,7 +214,7 @@
 				DE5C283E1E7CC0300086577A /* MainVC.swift in Sources */,
 				DE5C28711E7CCC630086577A /* Image+CoreDataClass.swift in Sources */,
 				DE5C286D1E7CCC630086577A /* Store+CoreDataClass.swift in Sources */,
-				DEE7A32F1E7D86C300C2CEDC /* ItemDetailsVCViewController.swift in Sources */,
+				DEE7A32F1E7D86C300C2CEDC /* ItemDetailsVC.swift in Sources */,
 				DE5C283C1E7CC0300086577A /* AppDelegate.swift in Sources */,
 				DE5C28701E7CCC630086577A /* ItemType+CoreDataProperties.swift in Sources */,
 				DE5C28741E7CCC630086577A /* Item+CoreDataProperties.swift in Sources */,
